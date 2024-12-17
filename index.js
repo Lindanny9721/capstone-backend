@@ -5,6 +5,7 @@ import cors from 'cors';
 import connectDB from './db/db.js';
 import planRoutes from './routes/planRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import placeRoutes from './routes/placeRoutes.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ connectDB();
 
 app.use('/users', userRoutes);
 app.use('/plans', planRoutes);
+app.use('/apiPlaces', placeRoutes);
 
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
